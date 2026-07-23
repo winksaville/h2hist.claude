@@ -7,7 +7,9 @@
       "Read(//home/wink/data/prgs/rust/iiac-perf/**)",
       "Bash(echo \"fmt_exit=$?\")",
       "Bash(curl -s \"https://api.github.com/search/code?q=h2+repo:iopsystems/histogram\")",
-      "Bash(RUSTFLAGS=\"-C llvm-args=-align-all-blocks=6\" cargo bench --bench record)"
+      "Bash(RUSTFLAGS=\"-C llvm-args=-align-all-blocks=6\" cargo bench --bench record)",
+      "Bash(rg -n --pcre2 '\\(?<![A-Za-z0-9_$'\"'\"']\\)[a-z]\\(?![A-Za-z0-9_]\\)' src/*.rs dev/*.rs)",
+      "Bash(./scripts/check-no-std.sh)"
     ]
   }
 }
